@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+    mysql:
+        image: mysql
+        restart: 'no'
+        env_file:
+           - ./docker/variables.env
+    nginx:
+        depends_on:
+            - phpfpm
+        image: nginx
+        ports:
+            - "80:80"
+        restart: 'no'
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www/
+            - ./docker/conf/nginx/phalcon.conf:/etc/nginx/conf.d/default.conf
+        links:
+            - phpfpm
+
+    phpfpm:
+        image: phalconphp/php-apache:ubuntu-16.04
+        restart: 'no'
+        working_dir: /var/www
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - mysql
+    phpmyadmin:
+        restart: 'no'
+        image: phpmyadmin/phpmyadmin:4.6
+        depends_on:
+          - mysql
+        ports:
+          - "9000:80"
+        env_file:
+            - ./docker/variables.env
+
+    # composer:
+    #     restart: 'no'
+    #     image: phalconphp/composer
+    #     command: install --no-dev
+    #     working_dir: /var/www
+    #     volumes:
+    #         - ./phalcon:/var/www
+
