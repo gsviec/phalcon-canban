@@ -1,0 +1,2 @@
+{{ partial('partials/header') }}
+{{ name }}
