@@ -8,7 +8,7 @@ class TestController extends ControllerBase
 
     public function initialize()
     {
-        $this->view->name = 'Thien Tran';
+        $this->view->name = 'Phalcon PHP';
     }
     public function indexAction()
     {
@@ -40,6 +40,16 @@ class TestController extends ControllerBase
     public function abcAction()
     {
         d(1);
+    }
+
+    public function voltAction()
+    {
+        $this->view->frameworks = ['PhalconPHP', 'Laravel' ,'Zend'];
+    }
+
+    public function viewAction()
+    {
+
     }
 }
 

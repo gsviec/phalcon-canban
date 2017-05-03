@@ -9,5 +9,9 @@ class IndexController extends ControllerBase
 
     }
 
+    public function newAction()
+    {
+        $this->view->productTypes = ['PHP', 'JAVA' ,' Ruby'];
+    }
 }
 

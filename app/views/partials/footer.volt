@@ -1,3 +1,3 @@
 <footer class="footer">
-    <p>© Company 2017</p>
+    <p>© Company {{ company is defined ? company : 'Phanbook' }} 2017</p>
 </footer>
