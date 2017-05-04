@@ -5,12 +5,16 @@
  */
 defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: realpath(dirname(__FILE__) . '/../..'));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
-define('APPLICATION_ENV', 'local');
+
+/**
+ * @const APPLICATION_ENV Current application stage.
+ */
+defined('APPLICATION_ENV') || define('APPLICATION_ENV', getenv('APPLICATION_ENV') ?: 'local');
 
 return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
+        'host'        => 'mysql',
         'username'    => 'root',
         'password'    => '',
         'dbname'      => 'test',

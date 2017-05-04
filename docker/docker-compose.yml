@@ -6,6 +6,7 @@ services:
         restart: 'no'
         env_file:
            - ./docker/variables.env
+        container_name: mysql_phalcon
     nginx:
         depends_on:
             - phpfpm
