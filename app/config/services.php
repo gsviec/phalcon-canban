@@ -7,6 +7,7 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
+use Phalcon\Flash\Session as FlashSession;
 use Phalcon\Logger\Adapter\File as FileAdapter;
 /**
  * Shared configuration service
@@ -111,10 +112,20 @@ $di->set('flash', function () {
     ]);
 });
 
+$di->set('flashSession', function () {
+    return new FlashSession([
+        'error'   => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice'  => 'alert alert-info',
+        'warning' => 'alert alert-warning'
+    ]);
+});
+
 /**
  * Start the session the first time some component request the session service
  */
 $di->setShared('session', function () {
+    //
     $session = new SessionAdapter();
     $session->start();
 

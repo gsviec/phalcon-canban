@@ -14,6 +14,7 @@
 <body>
 <div class="container">
     {{ partial('partials/header') }}
+    {{ this.flashSession.output() }}
     {% block content %} {% endblock %}
     {{ partial('partials/footer') }}
 
