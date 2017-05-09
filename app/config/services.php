@@ -58,7 +58,7 @@ $di->setShared('view', function () {
                 'compiledSeparator' => '_',
                 'compileAlways' => $compile
             ]);
-
+            $volt->getCompiler()->addExtension(new PhpFunctionExtension());
             return $volt;
         },
         '.phtml' => PhpEngine::class

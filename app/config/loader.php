@@ -17,7 +17,8 @@ $loader->registerNamespaces(
 );
 $loader->registerFiles(
         [
-            APP_PATH . '/library/helper.php'
+            APP_PATH . '/library/helper.php',
+            APP_PATH . '/library/PhpFunctionExtension.php',
         ]
 );
 
