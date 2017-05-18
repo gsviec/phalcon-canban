@@ -7,5 +7,3 @@
 
 <p>This page is located at <code>views/index/index.volt</code></p>
 {% endblock %}
-
-{#// muốn gọi function nằm ngoài danh sách Volt cung cấp thì mình sử dung thế#}
