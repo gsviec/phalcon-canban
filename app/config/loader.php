@@ -12,7 +12,8 @@ $loader->registerNamespaces(
     [
         'App\Controllers'   => $config->application->controllersDir,
         'App\Models'        => $config->application->modelsDir,
-        'App\Auth'          => APP_PATH .'/library/Auth'
+        'App\Auth'          => APP_PATH .'/library/Auth',
+        'App\Forms'         => APP_PATH .'/forms'
     ]
 );
 $loader->registerFiles(
