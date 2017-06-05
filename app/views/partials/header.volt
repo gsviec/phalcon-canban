@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/signup">SignUp</a>
+                </li>
             </ul>
         </nav>
         <h3 class="text-muted">{{ name }}</h3>
