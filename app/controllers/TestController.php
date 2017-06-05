@@ -2,6 +2,8 @@
 namespace App\Controllers;
 
 use App\Auth\Token;
+use App\Models\Posts;
+use Phalcon\Mvc\Model\Resultset\Simple;
 
 class TestController extends ControllerBase
 {
@@ -12,10 +14,22 @@ class TestController extends ControllerBase
     }
     public function indexAction()
     {
-        $auth = $this->auth;
+        $post = new Posts();
 
-        ///$this->getDI()->get('auth');
-        d($auth);
+        // A raw SQL statement
+        $sql = "SELECT * FROM posts WHERE id > 0";
+
+        // Base model
+
+        // Execute the query
+        $data = new Simple(
+            null,
+            $post,
+            $post->getReadConnection()->query($sql)
+        );
+        foreach ($data as $d) {
+            d($d);
+        }
     }
     public function showAction($slug = 'demo')
     {
