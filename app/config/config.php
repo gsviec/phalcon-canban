@@ -34,5 +34,17 @@ return new \Phalcon\Config([
         // of the webpspace.  This will break if the public/index.php entry point is moved or
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => '/',
-    ]
+    ],
+    'mail'        => [
+        'templatesDir' => 'mail/',
+        'fromName'     => 'Phanbook',
+        'fromEmail'    => 'phanbook@no-reply',
+        'smtp'         => [
+            'server'   => 'smtp.sendgrid.com',
+            'port'     => '587',
+            'security' => 'tls',
+            'username' => '',
+            'password' => '',
+        ]
+    ],
 ]);

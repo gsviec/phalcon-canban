@@ -9,4 +9,14 @@ class ControllerBase extends Controller
     {
         $this->view->name = 'Gsviec.com';
     }
+    /**
+     * loadDefaultAssets function.
+     *
+     * @access private
+     * @return void
+     */
+    private function loadDefaultAssets()
+    {
+
+    }
 }
