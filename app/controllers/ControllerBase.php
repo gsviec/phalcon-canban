@@ -2,7 +2,6 @@
 namespace App\Controllers;
 
 use Phalcon\Mvc\Controller;
-use function Sodium\add;
 
 class ControllerBase extends Controller
 {
@@ -20,7 +19,7 @@ class ControllerBase extends Controller
     private function loadDefaultAssets()
     {
         $this->assets
-            ->addCss('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', false)
+            ->addCss('css/bootstrap.min.css')
             ->addCss('css/app.css')
         ;
         $this->assets

@@ -6,6 +6,7 @@ use App\Forms\UserForm;
 use App\Mail\Mail;
 use App\Models\Posts;
 use App\Models\Users;
+use App\Queue\Resque;
 
 class UsersController extends ControllerBase
 {
@@ -45,6 +46,9 @@ class UsersController extends ControllerBase
         }
 
         //Send mail
+        $params = $user->toArray();
+
+        $this->queue->enqueue('gsviec_sendmail', '\\App\Queue\MailQueue', $params);
 
         $this->flashSession->success('Adding user success!');
         return $this->response->redirect();

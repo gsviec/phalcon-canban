@@ -141,3 +141,10 @@ $di->setShared('dispatcher', function () {
     $dispatcher->setDefaultNamespace('App\\Controllers');
     return $dispatcher;
 });
+
+$di->setShared(/**
+ * @return \App\Queue\Resque
+ */
+    'queue', function () {
+    return new \App\Queue\Resque();
+});

@@ -47,4 +47,14 @@ return new \Phalcon\Config([
             'password' => '',
         ]
     ],
+    'resque' => [
+        'REDIS_BACKEND'     => 'localhost:6379',    // Set Redis Backend Info
+        'REDIS_BACKEND_DB'  => '0',                 // Use Redis DB 0
+        'COUNT'             => '1',                 // Run 1 worker
+        'INTERVAL'          => '5',                 // Run every 5 seconds
+        'QUEUE'             => '*',                 // Look in all queues
+        'PREFIX'            => 'gsviec_',         // Prefix queues with test
+        'VVERBOSE'          => '1',
+        'APP_INCLUDE'       => 'run'
+    ],
 ]);

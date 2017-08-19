@@ -10,11 +10,12 @@ $loader = new \Phalcon\Loader();
  */
 $loader->registerNamespaces(
     [
-        'App\Controllers'   => $config->application->controllersDir,
-        'App\Models'        => $config->application->modelsDir,
+        'App\Controllers'   => APP_PATH .'/controllers/',
+        'App\Models'        => APP_PATH .'/models/',
         'App\Auth'          => APP_PATH .'/library/Auth',
         'App\Forms'         => APP_PATH .'/forms',
         'App\Mail'          => APP_PATH .'/library/Mail',
+        'App\Queue'         => APP_PATH .'/library/Queue',
 
     ]
 );
@@ -27,3 +28,7 @@ $loader->registerFiles(
 
 
 $loader->register();
+
+// Register The Composer Auto Loader
+require_once BASE_PATH . '/vendor/autoload.php';
+

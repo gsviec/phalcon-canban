@@ -65,6 +65,13 @@ class TestController extends ControllerBase
     {
 
     }
+    public function queueAction()
+    {
+        
+        $token = $this->queue->enqueue('test_gsviec', 'App\\Queue\\MailQueue', [], true);
+        $status = $this->queue->tracking($token);
+        return 0;
+    }
 
 }
 

@@ -13,7 +13,6 @@ try {
      * the services that provide a full stack framework.
      */
     $di = new FactoryDefault();
-
     /**
      * Handle routes
      */
@@ -23,7 +22,6 @@ try {
      * Read services
      */
     include APP_PATH . '/config/services.php';
-
 
 
     /**

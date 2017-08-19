@@ -17,7 +17,7 @@ class Mail extends Component
 
     private function getTemplate($key, $params)
     {
-        //$this->view->setViewsDir(APP_PATH . '/views/');
+        $this->view->setViewsDir(ROOT_DIR . '/app/views/');
         $render = $this->view->getRender(
             'templates',
             $key,
