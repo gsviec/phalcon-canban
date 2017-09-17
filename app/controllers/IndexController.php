@@ -6,7 +6,7 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-        //$this->session->destroy('auth');
+        $this->session->destroy('auth');
         //d($this->session->get('auth'));
     }
 

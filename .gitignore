@@ -3,3 +3,4 @@ vendor/
 /docker-compose.yml
 app/config/config.local.php
 app/config/config.product.php
+sftp-config.json
